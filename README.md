@@ -97,5 +97,5 @@ export function App() {
 
 ### Configuring container app, same as micro_react
 
-<img src='./apps/micro_react/src/micro-react-default.png' alt='default' />
-<img src='./apps/micro_react/src/micro-react-characters.png' alt='characters' />
+<img src='./apps/micro_react/src/micro-react-default.png' alt='default' width={200} height={140}/>
+<img src='./apps/micro_react/src/micro-react-characters.png' alt='characters' width={200} height={140}/>
