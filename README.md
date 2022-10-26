@@ -1,8 +1,8 @@
 # micro-frontend-react
 
 This example micro frontend app will contain a **container** app and a **micro_react** app
-- **container** is a container app that will inject **micro_react** micro frontend.
-- **micro_react**  — using matrial-ui 5
+- **container** -- container app using mui button imported from shared library
+- **micro_react**  —- micro_react app using mui button and rating imported from shared library
 
 
 <hr />
@@ -43,24 +43,24 @@ npm start
 
 ### Configuring micro_react app, add some ui
 
-To create the common-ui library, use the **@nrwl/react:lib** generator 
+- To create the common-ui library, use the **@nrwl/react:lib** generator 
 
 ```jsx
 npx nx g @nrwl/react:lib common-ui
 ```
-Create a banner contains only a button ( mui )
+- Create a banner contains only a button 
 ```jsx
 npx nx g @nrwl/react:component banner --project=common-ui --export
 ```
-=> This will create with this path: micro-frontend-react/libs/common-ui/src/lib/banner
+=> banner will follow this path: micro-frontend-react/libs/common-ui/src/lib/banner
 
-add mui packages
+- Add mui packages
 
 ```jsx
 npm install @mui/material @emotion/react @emotion/styled
 ```
 
-update banner:
+- Update banner:
 ```jsx
 import Button from '@mui/material/Button';
 
@@ -79,7 +79,7 @@ export function Banner({ text }: BannerProps) {
 export default Banner;
 ```
 
-import banner from micro_react/src/app/app.tsx
+- Import banner from micro_react/src/app/app.tsx
 
 ```jsx
 import { Banner } from '@micro-frontend-react/common-ui';
