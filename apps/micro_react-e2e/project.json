@@ -1,19 +1,19 @@
 {
-  "name": "micro-react-e2e",
+  "name": "micro_react-e2e",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/micro-react-e2e/src",
+  "sourceRoot": "apps/micro_react-e2e/src",
   "projectType": "application",
   "targets": {
     "e2e": {
       "executor": "@nrwl/cypress:cypress",
       "options": {
-        "cypressConfig": "apps/micro-react-e2e/cypress.config.ts",
-        "devServerTarget": "micro-react:serve:development",
+        "cypressConfig": "apps/micro_react-e2e/cypress.config.ts",
+        "devServerTarget": "micro_react:serve:development",
         "testingType": "e2e"
       },
       "configurations": {
         "production": {
-          "devServerTarget": "micro-react:serve:production"
+          "devServerTarget": "micro_react:serve:production"
         }
       }
     },
@@ -21,10 +21,10 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/micro-react-e2e/**/*.{js,ts}"]
+        "lintFilePatterns": ["apps/micro_react-e2e/**/*.{js,ts}"]
       }
     }
   },
   "tags": [],
-  "implicitDependencies": ["micro-react"]
+  "implicitDependencies": ["micro_react"]
 }
