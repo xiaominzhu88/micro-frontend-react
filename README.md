@@ -2,7 +2,7 @@
 
 This example micro frontend app will contain a **container** app and a **micro_react** app
 
-- **container** -- container app contains a mui button 
+- **container** -- container app contains a mui button
 - **micro_react** —- micro_react app using graphQL to fetch characters and mui button for the display toggle
 
 <hr />
@@ -55,6 +55,7 @@ npm start
 ```jsx
 npx nx g @nrwl/react:lib common-ui
 ```
+
 - To create the fetch hook library, use the **@nrwl/js:lib** generator
 
 ```jsx
@@ -66,6 +67,7 @@ npx nx g @nrwl/js:lib fetch
 ```jsx
 npx nx g @nrwl/react:component banner --project=common-ui --export
 ```
+
 - Create components
 
 => those will follow this path: micro-frontend-react/libs/common-ui/src/lib/...
@@ -77,7 +79,6 @@ npm install @mui/material @emotion/react @emotion/styled
 ```
 
 - Update banner
-
 
 - Import banner from micro_react/src/app/app.tsx
 
@@ -96,3 +97,5 @@ export function App() {
 
 ### Configuring container app, same as micro_react
 
+<img src='./apps/micro_react/src/micro-react-default.png' alt='default' />
+<img src='./apps/micro_react/src/micro-react-characters.png' alt='characters' />
