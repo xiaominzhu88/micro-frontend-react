@@ -1,10 +1,3 @@
-/*
- * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- This is a starter component and can be deleted.
- * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- Delete this file and get started with your project!
- * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- */
 export function NxWelcome({ title }: { title: string }) {
   return (
     <>
@@ -82,8 +75,7 @@ export function NxWelcome({ title }: { title: string }) {
       font-weight: 300;
       line-height: 2.25rem;
       margin-bottom: 0.5rem;
-    }
-          `,
+    }`,
         }}
       />
 
