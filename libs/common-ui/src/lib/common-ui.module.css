@@ -1,7 +1,4 @@
-/*
- * Replace this with your own classes
- *
- * e.g.
- * .container {
- * }
-*/
+.characters {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}

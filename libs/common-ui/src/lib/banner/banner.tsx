@@ -1,13 +1,16 @@
 import Button from '@mui/material/Button';
 
 export interface BannerProps {
-  text: string;
+  handleClick: () => void;
+  showCharacters: boolean;
 }
 
-export function Banner({ text }: BannerProps) {
+export function Banner({ handleClick, showCharacters }: BannerProps) {
   return (
     <header>
-      <Button variant="contained">{text}</Button>
+      <Button variant="contained" onClick={() => handleClick()}>
+        {!showCharacters ? 'Show me characters' : 'hide'}
+      </Button>
     </header>
   );
 }

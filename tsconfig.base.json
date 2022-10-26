@@ -15,7 +15,11 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@micro-frontend-react/common-ui": ["libs/common-ui/src/index.ts"]
+      "@micro-frontend-react/common-ui": ["libs/common-ui/src/index.ts"],
+      "@micro-frontend-react/fetch": ["libs/fetch/src/index.ts"],
+      "@micro-frontend-react/micro-react/fetch-hook": [
+        "libs/micro-react/fetch-hook/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

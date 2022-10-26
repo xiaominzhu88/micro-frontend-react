@@ -7,7 +7,6 @@ function MicroReactComponent() {
 
   return (
     <div>
-      <h1>I'm mui Rating</h1>
       <Box>
         <Rating
           name="simple-controlled"

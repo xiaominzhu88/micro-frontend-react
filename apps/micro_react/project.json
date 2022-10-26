@@ -22,7 +22,7 @@
         ],
         "styles": ["apps/micro_react/src/styles.css"],
         "scripts": [],
-        "webpackConfig": "apps/micro_react/webpack.config.js"
+        "webpackConfig": "@nrwl/react/plugins/webpack"
       },
       "configurations": {
         "development": {
