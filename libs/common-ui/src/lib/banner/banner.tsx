@@ -9,7 +9,7 @@ export function Banner({ handleClick, showCharacters }: BannerProps) {
   return (
     <header>
       <Button variant="contained" onClick={() => handleClick()}>
-        {!showCharacters ? 'Show me characters' : 'hide'}
+        {!showCharacters ? 'Show characters' : 'Hide'}
       </Button>
     </header>
   );
