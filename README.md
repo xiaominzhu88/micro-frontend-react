@@ -2,8 +2,8 @@
 
 This example micro frontend app will contain a **container** app and a **micro_react** app
 
-- **container** -- container app using mui button imported from shared library
-- **micro_react** —- micro_react app using mui button and rating imported from shared library
+- **container** -- container app contains a mui button 
+- **micro_react** —- micro_react app using graphQL to fetch characters and mui button for the display toggle
 
 <hr />
 
@@ -55,14 +55,20 @@ npm start
 ```jsx
 npx nx g @nrwl/react:lib common-ui
 ```
+- To create the fetch hook library, use the **@nrwl/js:lib** generator
+
+```jsx
+npx nx g @nrwl/js:lib fetch
+```
 
 - Create a banner contains only a button
 
 ```jsx
 npx nx g @nrwl/react:component banner --project=common-ui --export
 ```
+- Create components
 
-=> banner will follow this path: micro-frontend-react/libs/common-ui/src/lib/banner
+=> those will follow this path: micro-frontend-react/libs/common-ui/src/lib/...
 
 - Add mui packages
 
@@ -70,37 +76,23 @@ npx nx g @nrwl/react:component banner --project=common-ui --export
 npm install @mui/material @emotion/react @emotion/styled
 ```
 
-- Update banner:
+- Update banner
 
-```jsx
-import Button from '@mui/material/Button';
-
-export interface BannerProps {
-  text: string;
-}
-
-export function Banner({ text }: BannerProps) {
-  return (
-    <header>
-      <Button variant="contained">{text}</Button>
-    </header>
-  );
-}
-
-export default Banner;
-```
 
 - Import banner from micro_react/src/app/app.tsx
 
 ```jsx
 import { Banner } from '@micro-frontend-react/common-ui';
 export function App() {
+  ...
   return (
     <div className={styles['app_wrapper']}>
-      <Banner text="I'm imported mui Button" />
+      <Banner handleClick={handleClick} showCharacters={showCharacters} />
+      <Characters showCharacters={showCharacters} />
     </div>
   );
 }
 ```
 
 ### Configuring container app, same as micro_react
+
