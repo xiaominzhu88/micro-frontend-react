@@ -1,10 +1,27 @@
 import styles from '../common-ui.module.css';
-import { useFetchHook } from '../../../../fetch/src';
+import CircularProgree from '@mui/material/CircularProgress';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { teal } from '@mui/material/colors';
+import { useFetchHook } from '@micro-frontend-react/fetch';
 
-const Characters = ({ showCharacters }: { showCharacters: boolean }) => {
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: teal[100],
+    },
+  },
+});
+
+export const Characters = ({ showCharacters }: { showCharacters: boolean }) => {
   const { loading, error, data } = useFetchHook(); // reuse everywhere
-
-  if (loading) return <p>Loading...</p>;
+  if (loading)
+    return (
+      <p>
+        <ThemeProvider theme={theme}>
+          <CircularProgree color="primary" size={120} />
+        </ThemeProvider>
+      </p>
+    );
   if (error) return <p>Error :(</p>;
 
   return (
@@ -31,5 +48,3 @@ const Characters = ({ showCharacters }: { showCharacters: boolean }) => {
     </div>
   );
 };
-
-export default Characters;

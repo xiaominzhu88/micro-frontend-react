@@ -2,7 +2,7 @@ import Rating from '@mui/material/Rating';
 import Box from '@mui/material/Box';
 import { useState } from 'react';
 
-function MicroReactComponent() {
+export function MicroReactComponent() {
   const [value, setValue] = useState<number | null>(4);
 
   return (
@@ -19,4 +19,3 @@ function MicroReactComponent() {
     </div>
   );
 }
-export default MicroReactComponent;
