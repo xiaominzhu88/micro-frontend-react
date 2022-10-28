@@ -13,7 +13,7 @@ const App = () => {
   const handleClick = () => setShowCharacters(!showCharacters);
   return (
     <div className={styles['app_wrapper']}>
-      <NxWelcome title="micro_react" />
+      <NxWelcome title="Micro_react App" />
       <Banner handleClick={handleClick} showCharacters={showCharacters} />
       <br />
       <MicroReactComponent />

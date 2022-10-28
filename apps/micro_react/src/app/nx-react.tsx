@@ -19,29 +19,6 @@ export function NxWelcome({ title }: { title: string }) {
       line-height: inherit;
       margin: 0;
     }
-    h1,
-    h2,
-    p,
-    pre {
-      margin: 0;
-    }
-    *,
-    ::before,
-    ::after {
-      box-sizing: border-box;
-      border-width: 0;
-      border-style: solid;
-      border-color: currentColor;
-    }
-    h1,
-    h2 {
-      font-size: inherit;
-      font-weight: inherit;
-    }
-    a {
-      color: inherit;
-      text-decoration: inherit;
-    }
     .wrapper {
       width: 100%;
     }
@@ -63,13 +40,6 @@ export function NxWelcome({ title }: { title: string }) {
       font-weight: 500;
       letter-spacing: -0.025em;
       line-height: 1;
-    }
-    #welcome span {
-      display: block;
-      font-size: 1.875rem;
-      font-weight: 300;
-      line-height: 2.25rem;
-      margin-bottom: 0.5rem;
     }
       `,
         }}

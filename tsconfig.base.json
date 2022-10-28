@@ -19,6 +19,9 @@
       "@micro-frontend-react/fetch": ["libs/fetch/src/index.ts"],
       "@micro-frontend-react/micro-react/fetch-hook": [
         "libs/micro-react/fetch-hook/src/index.ts"
+      ],
+      "@micro-frontend-react/shared/data-context": [
+        "libs/shared/data-context/src/index.ts"
       ]
     }
   },
