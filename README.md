@@ -163,4 +163,11 @@ module.exports = {
 nx serve shell --open --devRemotes=remote
 ```
 
-<img src='./apps/remote/src/shell.png' alt='shell' width='200px' height='150px'/>
+<img src='./apps/remote/src/assets/shell.png' alt='shell' width='200px' height='150px'/>
+
+- Run 👇 to view the projects connection
+ ```jsx
+ nx graph
+ ```
+ <img src='./apps/remote/src/assets/graph.png' alt='graph' width='250px' height='150px'/>
+
