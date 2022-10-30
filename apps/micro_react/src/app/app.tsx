@@ -5,7 +5,7 @@ import { useState } from 'react';
 import {
   Banner,
   Characters,
-  MicroReactComponent,
+  RatingStar,
 } from '@micro-frontend-react/common-ui';
 
 const App = () => {
@@ -16,7 +16,7 @@ const App = () => {
       <NxWelcome title="Micro_react App" />
       <Banner handleClick={handleClick} showCharacters={showCharacters} />
       <br />
-      <MicroReactComponent />
+      <RatingStar />
       <Characters showCharacters={showCharacters} />
     </div>
   );

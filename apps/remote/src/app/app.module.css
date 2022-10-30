@@ -1,1 +1,7 @@
-/* Your styles goes here. */
+.remoteButtons {
+  display: flex;
+  flex-direction: column;
+}
+header {
+  margin-bottom: 15px;
+}

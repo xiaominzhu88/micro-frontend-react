@@ -1,16 +1,27 @@
-import { createContext, useState } from 'react';
+import { createContext, useState, useCallback } from 'react';
 
-export interface SharedDataContextProps {
-  children: JSX.Element;
-}
+type CounterContextType = {
+  counter: number;
+  increment: () => void;
+  decrement: () => void;
+};
 
-export const DataContext = createContext<Record<string, any>>({});
+export const DataContext = createContext<CounterContextType>({
+  counter: 1,
+  increment: () => {},
+  decrement: () => {},
+});
 
-export function DataProvider({ children }: SharedDataContextProps) {
+export const DataProvider = ({ children }: { children: React.ReactNode }) => {
   const [counter, setCounter] = useState(1);
+
+  const increment = () => setCounter((previousCounter) => previousCounter + 1);
+
+  const decrement = () => setCounter((previousCounter) => previousCounter - 1);
+
   return (
-    <DataContext.Provider value={{ counter, setCounter }}>
+    <DataContext.Provider value={{ counter, increment, decrement }}>
       {children}
     </DataContext.Provider>
   );
-}
+};
