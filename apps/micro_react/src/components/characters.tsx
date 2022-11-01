@@ -1,4 +1,4 @@
-import styles from '../common-ui.module.css';
+import styles from './characters.module.css';
 import CircularProgree from '@mui/material/CircularProgress';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { teal } from '@mui/material/colors';

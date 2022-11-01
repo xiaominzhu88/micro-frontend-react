@@ -6,9 +6,7 @@ This example micro frontend app will contain a **container**, a **micro_react** 
 - **micro_react** —- micro_react app using graphQL to fetch characters and mui button for the display toggle
 - **shell** and **remote** Apps -- using shared counter context data on button clicks
 
-
 <hr />
-
 
 Step 1: create monorepo workspace with empty setup named micro-frontend-react and target into it
 
@@ -22,10 +20,10 @@ Step 2: installing all react dependencies:
 ```jsx
 npm install -D @nrwl/react
 ```
+
 <hr />
 
 ## container and micro_react React Applications
-
 
 Step 3: generating container app:
 
@@ -104,15 +102,15 @@ export function App() {
 
 ### Configuring container app, same as micro_react
 
-<img src='./apps/micro_react/src/micro-react-default.png' alt='default' width='200px' height='100px'/>
-<img src='./apps/micro_react/src/micro-react-characters.png' alt='characters' width='200px' height='150px'/>
-
+<img src='./apps/micro_react/src/assets/micro-react-default.png' alt='default' width='200px' height='100px'/>
+<img src='./apps/micro_react/src/assets/micro-react-characters.png' alt='characters' width='200px' height='150px'/>
 
 <hr />
 
-##  **Shell** and **Remote** React applications
+## **Shell** and **Remote** React applications
 
 - add both Apps
+
 ```jsx
 nx g @nrwl/react:host shell --remotes=remote
 ```
@@ -124,14 +122,17 @@ Shell and Remote Apps are using shared data which placed in libs/shared/data-con
 ```jsx
 nx g @nrwl/react:library shared/data-context
 ```
+
 - update data-context with counter state
 
-- in libs/shared/data-context/src/index.ts 
+- in libs/shared/data-context/src/index.ts
+
 ```jsx
 export { DataProvider, DataContext } from './lib/shared-data-context';
 ```
-- update module-federation.config.js in 
-apps/shell/module-federation.config.js and apps/remote/module-federation.config.js
+
+- update module-federation.config.js in
+  apps/shell/module-federation.config.js and apps/remote/module-federation.config.js
 
 ```jsx
 const coreLibraries = new Set([
@@ -152,22 +153,27 @@ module.exports = {
   },
 };
 ```
+
 - import data-provider inside Shell/src/app/app.tsx
 - consume the counter context state in the Shell and Remote app
+
 ```jsx
-  const { counter, setCounter } = useContext(DataContext);
+const { counter, setCounter } = useContext(DataContext);
 ```
 
 - Run the application ( Shell will be running at localhost 4200, Remote 4210 )
+
 ```jsx
 nx serve shell --open --devRemotes=remote
 ```
 
-<img src='./apps/remote/src/assets/shell.png' alt='shell' width='200px' height='150px'/>
+<img src='./apps/remote/src/assets/remote.png' alt='shell' width='200px' height='60px'/>
+<img src='./apps/remote/src/assets/home.png' alt='shell' width='200px' height='60px'/>
 
 - Run 👇 to view the projects connection
- ```jsx
- nx graph
- ```
- <img src='./apps/remote/src/assets/graph.png' alt='graph' width='250px' height='150px'/>
 
+```jsx
+nx graph
+```
+
+ <img src='./apps/remote/src/assets/graph.png' alt='graph' width='250px' height='150px'/>

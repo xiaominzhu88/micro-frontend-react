@@ -1,4 +1,3 @@
 export { Banner } from './lib/banner/banner';
-export { Characters } from './lib/components/characters';
-export { RatingStar } from './lib/components/rating';
+export { RatingStar } from './lib/rating/rating';
 export { CustomButton } from './lib/button/button';

@@ -1,31 +1,22 @@
 import Button from '@mui/material/Button';
-import { useTheme, createTheme, ThemeProvider } from '@mui/material/styles';
-import { lightBlue } from '@mui/material/colors';
+import { useTheme, ThemeProvider } from '@mui/material/styles';
 
 export interface BannerProps {
   handleClick: () => void;
-  showCharacters: boolean;
+  children: string;
 }
-const theme = createTheme({
-  palette: {
-    secondary: {
-      main: lightBlue[100],
-    },
-  },
-});
 
-export function Banner({ handleClick, showCharacters }: BannerProps) {
-  //const theme = useTheme();
-  console.log(theme);
+export function Banner({ handleClick, children }: BannerProps) {
+  const theme = useTheme();
   return (
     <header>
       <ThemeProvider theme={theme}>
         <Button
-          color="secondary"
+          color="primary"
           variant="contained"
           onClick={() => handleClick()}
         >
-          {!showCharacters ? 'Show characters' : 'Hide'}
+          {children}
         </Button>
       </ThemeProvider>
     </header>

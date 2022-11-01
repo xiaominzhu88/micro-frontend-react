@@ -2,11 +2,8 @@
 import styles from './app.module.css';
 import NxWelcome from './nx-react';
 import { useState } from 'react';
-import {
-  Banner,
-  Characters,
-  RatingStar,
-} from '@micro-frontend-react/common-ui';
+import { Banner, RatingStar } from '@micro-frontend-react/common-ui';
+import { Characters } from '../components/characters';
 
 const App = () => {
   const [showCharacters, setShowCharacters] = useState(false);
@@ -14,7 +11,11 @@ const App = () => {
   return (
     <div className={styles['app_wrapper']}>
       <NxWelcome title="Micro_react App" />
-      <Banner handleClick={handleClick} showCharacters={showCharacters} />
+      <Banner
+        handleClick={handleClick}
+        showCharacters={showCharacters}
+        children={!showCharacters ? 'Show characters' : 'Hide'}
+      />
       <br />
       <RatingStar />
       <Characters showCharacters={showCharacters} />
