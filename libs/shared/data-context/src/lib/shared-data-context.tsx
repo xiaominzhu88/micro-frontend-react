@@ -1,6 +1,6 @@
-import { createContext, useState, useCallback } from 'react';
+import { createContext, ReactNode, useState } from 'react';
 
-type CounterContextType = {
+export type CounterContextType = {
   counter: number;
   increment: () => void;
   decrement: () => void;
@@ -8,11 +8,11 @@ type CounterContextType = {
 
 export const DataContext = createContext<CounterContextType>({
   counter: 1,
-  increment: () => {},
-  decrement: () => {},
+  increment: () => null,
+  decrement: () => null,
 });
 
-export const DataProvider = ({ children }: { children: React.ReactNode }) => {
+export const DataProvider = ({ children }: { children: ReactNode }) => {
   const [counter, setCounter] = useState(1);
 
   const increment = () => setCounter((previousCounter) => previousCounter + 1);

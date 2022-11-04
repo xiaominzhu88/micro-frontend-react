@@ -6,7 +6,7 @@ import { Banner, RatingStar } from '@micro-frontend-react/common-ui';
 import { Characters } from '../components/characters';
 
 const App = () => {
-  const [showCharacters, setShowCharacters] = useState(false);
+  const [showCharacters, setShowCharacters] = useState<boolean>(false);
   const handleClick = () => setShowCharacters(!showCharacters);
   return (
     <div className={styles['app_wrapper']}>
@@ -14,8 +14,9 @@ const App = () => {
       <Banner
         handleClick={handleClick}
         showCharacters={showCharacters}
-        children={!showCharacters ? 'Show characters' : 'Hide'}
-      />
+      >
+        {!showCharacters ? 'Show characters' : 'Hide'}
+      </Banner>
       <br />
       <RatingStar />
       <Characters showCharacters={showCharacters} />
