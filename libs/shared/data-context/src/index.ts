@@ -1,1 +1,1 @@
-export { DataProvider, DataContext } from './lib/shared-data-context';
+export { DataProvider, DataContext, CounterContextType } from './lib/shared-data-context';
